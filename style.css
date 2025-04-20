@@ -1,0 +1,636 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-gray: #f5f6fa;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', 'Open Sans', sans-serif; /* Added Arabic font */
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    direction: rtl; /* Add RTL support */
+    text-align: right; /* Right align text */
+}
+
+/* Header & Navigation */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 120px;  /* Reduced from 180px */
+    transition: transform 0.3s ease; /* Add smooth transition */
+}
+
+.logo {
+    height: 100px; /* Reduced from 150px */
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo img {
+    height: 100px; /* Reduced from 150px */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.logo a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    opacity: 0.9;
+}
+
+/* Add new class for header hiding */
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;  /* This will keep logo left and nav items right */
+    align-items: center;
+    padding: 1rem;
+    flex-direction: row-reverse; /* Reverse nav items order */
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding-right: 0; /* Remove default RTL padding */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(10, 107, 204, 0.7), rgba(212, 223, 235, 0.7)),
+                url('../images/hero-bg.jpg') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem;
+    margin-top: 120px; /* Match new header height */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem; /* Reduced gap further */
+    padding: 0.5rem; /* Reduced padding */
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: transparent;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 250px;  /* Reduced from 280px */
+    height: 420px; /* Increased from 380px */
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 15px; /* Add border radius to container */
+}
+
+.feature-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Changed from contain to cover */
+    object-position: center;
+    display: block;
+    padding: 0;
+    border-radius: 15px; /* Keep border radius on image */
+    -webkit-border-radius: 15px; /* For Safari support */
+    -moz-border-radius: 15px; /* For Firefox support */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Remove text-related styles since we won't need them */
+.feature-card h2,
+.feature-card p {
+    display: none;
+}
+
+/* News & Events */
+.news-events {
+    background: var(--light-gray);
+    padding: 4rem 1rem;
+}
+
+.news-events h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.news-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-grid article {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: right;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+}
+
+/* Contact Page */
+.contact-page {
+    margin-top: 150px; /* Increased margin to prevent header overlap */
+    padding: 2rem;
+    min-height: calc(100vh - 150px); /* Full viewport height minus header */
+    background: linear-gradient(rgba(10, 107, 204, 0.1), rgba(212, 223, 235, 0.1));
+}
+
+.contact-form-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-section h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    text-align: center;
+    position: relative;
+}
+
+.contact-form-section h1:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 1rem auto;
+}
+
+.contact-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--accent-color);
+    opacity: 0.1;
+    border-radius: 0 15px 0 100%;
+}
+
+.contact-form-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--primary-color);
+    opacity: 0.1;
+    border-radius: 0 100% 0 15px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 2rem auto 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.submit-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Schedule Page */
+.schedule-page {
+    margin-top: 150px;
+    padding: 2rem;
+    min-height: calc(100vh - 150px);
+    background: linear-gradient(rgba(10, 107, 204, 0.1), rgba(212, 223, 235, 0.1));
+}
+
+.schedule-page h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.schedule-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.schedule-table td {
+    position: relative;
+    padding: 1.5rem 1rem;
+}
+
+.lesson-topic {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.schedule-table td:hover .lesson-topic {
+    color: var(--accent-color);
+}
+
+.schedule-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.schedule-table tr:hover {
+    background-color: #f1f4f6;
+}
+
+.schedule-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Tajawal', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.week-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Chat Section */
+.chat-container {
+    display: flex;
+    gap: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    height: 600px;
+}
+
+.teachers-tabs {
+    width: 300px;
+    border-left: 1px solid #eee;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.tab {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab:hover::before,
+.tab.active::before {
+    opacity: 1;
+}
+
+.tab.active {
+    background: white;
+}
+
+.subject {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.chat-input {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.chat-input textarea {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    height: 50px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.camera-btn, .send-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;  /* Changed from 50% to 8px for square with rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.camera-btn:hover, .send-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.camera-btn:active, .send-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.camera-btn i, .send-btn i {
+    transition: transform 0.3s ease;
+}
+
+.camera-btn:hover i {
+    transform: scale(1.1);
+}
+
+.send-btn:hover i {
+    transform: translate(2px, -2px);
+}
+
+/* Add Font Awesome icons */
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

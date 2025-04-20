@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحصص المدرسية - ثانوية الأمير نايف</title>
+    <link rel="stylesheet" href="Style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="home.php">
+                    <img src="images/chool-logo.jpg" alt="شعار ثانوية الأمير نايف">
+                </a>
+            </div>
+            <ul>
+                <li><a href="home.php">الرئيسية</a></li>
+                <li><a href="الحصص المدرسية.html" class="active">الحصص المدرسية</a></li>
+                <li><a href="التواصل.html">التواصل</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="schedule-page">
+        <h1>جدول الحصص الدراسية</h1>
+        <div class="schedule-container">
+            <div class="schedule-nav">
+                <button class="nav-btn prev-week">
+                    <i class="fas fa-arrow-right"></i>
+                    الأسبوع السابق
+                </button>
+                <h2 class="week-title">الأسبوع: <span id="weekNumber">1</span></h2>
+                <button class="nav-btn next-week">
+                    الأسبوع القادم
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>اليوم/الحصة</th>
+                        <th>الأولى</th>
+                        <th>الثانية</th>
+                        <th>الثالثة</th>
+                        <th>الرابعة</th>
+                        <th>الخامسة</th>
+                        <th>السادسة</th>
+                        <th>السابعة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>الأحد</td>
+                        <td>
+                            اللغة الإنجليزية
+                            <span class="lesson-topic">تحليل الأدب الإنجليزي المعاصر</span>
+                        </td>
+                        <td>
+                            العلوم الرقمية
+                            <span class="lesson-topic">برمجة تطبيقات الويب المتقدمة</span>
+                        </td>
+                        <td>
+                            الرياضيات
+                            <span class="lesson-topic">التفاضل والتكامل المتقدم</span>
+                        </td>
+                        <td>
+                            التربية البدنية
+                            <span class="lesson-topic">تدريب اللياقة المتقدم</span>
+                        </td>
+                        <td>
+                            الدراسات النفسية
+                            <span class="lesson-topic">علم النفس الاجتماعي</span>
+                        </td>
+                        <td>
+                            الفيزياء
+                            <span class="lesson-topic">الميكانيكا الكمية</span>
+                        </td>
+                        <td>
+                            علوم الأرض والفضاء
+                            <span class="lesson-topic">علم الفلك المتقدم</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>الاثنين</td>
+                        <td>
+                            الدراسات الأدبية
+                            <span class="lesson-topic">تحليل النصوص الأدبية المعاصرة</span>
+                        </td>
+                        <td>
+                            الفيزياء
+                            <span class="lesson-topic">الديناميكا الحرارية</span>
+                        </td>
+                        <td>
+                            اللغة الإنجليزية
+                            <span class="lesson-topic">كتابة المقالات الأكاديمية</span>
+                        </td>
+                        <td>
+                            العلوم الرقمية
+                            <span class="lesson-topic">أمن المعلومات</span>
+                        </td>
+                        <td>
+                            علوم الأرض والفضاء
+                            <span class="lesson-topic">الجيولوجيا المتقدمة</span>
+                        </td>
+                        <td>
+                            الرياضيات
+                            <span class="lesson-topic">المصفوفات والمعادلات</span>
+                        </td>
+                        <td>
+                            التربية البدنية
+                            <span class="lesson-topic">الرياضات الجماعية</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>الثلاثاء</td>
+                        <td>
+                            الرياضيات
+                            <span class="lesson-topic">المعادلات التفاضلية</span>
+                        </td>
+                        <td>
+                            الدراسات النفسية
+                            <span class="lesson-topic">نظريات الشخصية</span>
+                        </td>
+                        <td>
+                            العلوم الرقمية
+                            <span class="lesson-topic">الذكاء الاصطناعي</span>
+                        </td>
+                        <td>
+                            الدراسات الأدبية
+                            <span class="lesson-topic">الشعر العربي المعاصر</span>
+                        </td>
+                        <td>
+                            اللغة الإنجليزية
+                            <span class="lesson-topic">الأدب العالمي</span>
+                        </td>
+                        <td>
+                            علوم الأرض والفضاء
+                            <span class="lesson-topic">النظام الشمسي المتقدم</span>
+                        </td>
+                        <td>
+                            الفيزياء
+                            <span class="lesson-topic">النسبية الخاصة</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>الأربعاء</td>
+                        <td>
+                            التربية البدنية
+                            <span class="lesson-topic">استراتيجيات كرة القدم</span>
+                        </td>
+                        <td>
+                            علوم الأرض والفضاء
+                            <span class="lesson-topic">تغير المناخ العالمي</span>
+                        </td>
+                        <td>
+                            الفيزياء
+                            <span class="lesson-topic">الفيزياء النووية</span>
+                        </td>
+                        <td>
+                            اللغة الإنجليزية
+                            <span class="lesson-topic">مهارات العرض التقديمي</span>
+                        </td>
+                        <td>
+                            الرياضيات
+                            <span class="lesson-topic">نظرية الاحتمالات</span>
+                        </td>
+                        <td>
+                            الدراسات الأدبية
+                            <span class="lesson-topic">تحليل النصوص النقدية</span>
+                        </td>
+                        <td>
+                            الدراسات النفسية
+                            <span class="lesson-topic">علم النفس التربوي</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>الخميس</td>
+                        <td>
+                            الفيزياء
+                            <span class="lesson-topic">الموجات الكهرومغناطيسية</span>
+                        </td>
+                        <td>
+                            اللغة الإنجليزية
+                            <span class="lesson-topic">الترجمة المتقدمة</span>
+                        </td>
+                        <td>
+                            الدراسات النفسية
+                            <span class="lesson-topic">الصحة النفسية</span>
+                        </td>
+                        <td>
+                            علوم الأرض والفضاء
+                            <span class="lesson-topic">الجيوفيزياء</span>
+                        </td>
+                        <td>
+                            العلوم الرقمية
+                            <span class="lesson-topic">تطوير التطبيقات</span>
+                        </td>
+                        <td>
+                            التربية البدنية
+                            <span class="lesson-topic">علم التشريح الرياضي</span>
+                        </td>
+                        <td>
+                            الدراسات الأدبية
+                            <span class="lesson-topic">النقد الأدبي الحديث</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        // ...Same header hide/show script as home.php...
+    </script>
+</body>
+</html>

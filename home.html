@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثانوية الأمير نايف - التميز في التعليم</title>
+    <link rel="stylesheet" href="Style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="home.php">
+                    <img src="images/chool-logo.jpg" alt="شعار ثانوية الأمير نايف">
+                </a>
+            </div>
+            <ul>
+                <li><a href="home.php" class="active">الرئيسية</a></li>
+                <li><a href="الحصص المدرسية.html">الحصص المدرسية</a></li>
+                <li><a href="التواصل.html">التواصل</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>ثانوية الأمير نايف بن عبدالعزيز</h1>
+        <p class="tagline">نلهم التميز، نبني قادة المستقبل</p>
+    </section>
+
+    <main>
+        <section class="features">
+            <div class="feature-card">
+                <img src="images/academics.jpg" alt="صور المدرسة">
+            </div>
+            <div class="feature-card">
+                <!-- Add placeholder for second school image -->
+                <img src="images/school-photo-2.jpg" alt="صور المدرسة">
+            </div>
+            <div class="feature-card">
+                <!-- Add placeholder for third school image -->
+                <img src="images/school-photo-3.jpg" alt="صور المدرسة">
+            </div>
+        </section>
+
+        <section class="news-events">
+            <h2>آخر الأخبار والفعاليات</h2>
+            <div class="news-grid">
+                <article>
+                    <h3>معرض العلوم 2025</h3>
+                    <p>انضموا إلينا في معرض العلوم السنوي الذي يعرض ابتكارات الطلاب</p>
+                    <a href="#">تعرف أكثر →</a>
+                </article>
+                <article>
+                    <h3>الحفل الربيعي</h3>
+                    <p>استمتعوا بمواهب قسم الموسيقى لدينا في شهر مايو</p>
+                    <a href="#">تعرف أكثر →</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>تواصل معنا</h3>
+                <p>📍 شارع التعليم 123</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@brightonacademy.edu</p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 ثانوية الأمير نايف. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling down & past 100px
+                header.classList.add('header-hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

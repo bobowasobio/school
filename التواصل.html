@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - ثانوية الأمير نايف</title>
+    <link rel="stylesheet" href="Style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Same header as home.php -->
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="home.php">
+                    <img src="images/chool-logo.jpg" alt="شعار ثانوية الأمير نايف">
+                </a>
+            </div>
+            <ul>
+                <li><a href="home.php">الرئيسية</a></li>
+                <li><a href="الحصص المدرسية.html">الحصص المدرسية</a></li>
+                <li><a href="التواصل.html" class="active">التواصل</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <h1>التواصل مع المعلمين</h1>
+        <div class="chat-container">
+            <div class="teachers-tabs">
+                <div class="tab active" data-teacher="physics">
+                    <h3>أ. محمد أحمد</h3>
+                    <p class="subject">الفيزياء</p>
+                </div>
+                <div class="tab" data-teacher="math">
+                    <h3>أ. عبدالله خالد</h3>
+                    <p class="subject">الرياضيات</p>
+                </div>
+                <div class="tab" data-teacher="english">
+                    <h3>أ. فهد محمد</h3>
+                    <p class="subject">اللغة الإنجليزية</p>
+                </div>
+                <div class="tab" data-teacher="science">
+                    <h3>أ. سعد العمري</h3>
+                    <p class="subject">علوم الأرض والفضاء</p>
+                </div>
+                <div class="tab" data-teacher="design">
+                    <h3>أ. ناصر العتيبي</h3>
+                    <p class="subject">التصميم الرقمي</p>
+                </div>
+                <div class="tab" data-teacher="psychology">
+                    <h3>أ. عبدالرحمن سعد</h3>
+                    <p class="subject">الدراسات النفسية</p>
+                </div>
+                <div class="tab" data-teacher="literature">
+                    <h3>أ. خالد الشمري</h3>
+                    <p class="subject">الدراسات الأدبية</p>
+                </div>
+                <div class="tab" data-teacher="pe">
+                    <h3>أ. بندر القحطاني</h3>
+                    <p class="subject">التربية البدنية</p>
+                </div>
+            </div>
+
+            <div class="chat-window">
+                <div class="chat-header">
+                    <h2>المحادثة مع <span class="teacher-name">أ. محمد أحمد</span></h2>
+                </div>
+                <div class="chat-messages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+                <div class="chat-input">
+                    <button class="camera-btn" title="إرفاق صورة">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <textarea placeholder="اكتب رسالتك هنا..."></textarea>
+                    <button class="send-btn" title="إرسال">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Same footer and script as home.php -->
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                // Update teacher name in chat header
+                const teacherName = tab.querySelector('h3').textContent;
+                document.querySelector('.teacher-name').textContent = teacherName;
+                // Clear chat messages for new teacher
+                document.querySelector('.chat-messages').innerHTML = '';
+            });
+        });
+
+        // Camera button functionality
+        document.querySelector('.camera-btn').addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                // Handle camera stream
+                // You would need to implement the actual camera functionality here
+                console.log('Camera accessed');
+            } catch (err) {
+                console.error('Error accessing camera:', err);
+            }
+        });
+    </script>
+</body>
+</html>
